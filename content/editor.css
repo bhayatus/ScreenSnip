@@ -1,0 +1,232 @@
+html, body {
+  margin: 0 15 15 15;
+  background-color: #1A1D21;
+}
+
+#loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+#overlay {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.5);
+  opacity: 1;
+  z-index: 3;
+}
+
+#container {
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.menu-bar {
+  background-color: #1A1D21;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-title {
+  color: white;
+  font-family: Raleway;
+  font-size: 26px;
+  font-weight: bold;
+  user-select: none;
+}
+
+.menu-buttons-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-text {
+  color: white;
+  font-family: Raleway;
+  font-size: 18px;
+  padding: 0px 5px 0px 5px;
+  user-select: none;
+}
+
+.menu-save-button-container {
+  display: flex;
+  align-items: center;
+  border-right: 1px solid white;
+  padding-right: 10px;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.menu-button:hover {
+  background-color: #343535;
+}
+
+.menu-save-icon {
+  padding: 5px 5px 5px 5px;
+}
+
+.menu-dropdown-icon {
+  padding: 5px 5px 5px 5px;
+}
+
+.menu-dropdown-button {
+  position: relative;
+  display: flex;
+  align-self: stretch;
+}
+
+.menu-dropdown-content {
+  display: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #343535;
+}
+
+.menu-dropdown-button:hover .menu-dropdown-content {
+  display: block;
+  z-index: 2;
+}
+
+.menu-dropdown-item {
+  color: white;
+  font-family: Raleway;
+  font-size: 20px;
+  display: block;
+  background-color: #343535;
+  padding: 10px;
+  user-select: none;
+}
+
+.menu-dropdown-item:hover {
+  background-color: white;
+  color: #343535;
+}
+
+.menu-dropdown-item-top {
+  border-radius: 10px 10px 0px 0px;
+}
+
+.menu-dropdown-item-middle {
+  border-radius: 0px 0px 0px 0px;
+}
+
+.menu-dropdown-item-bottom {
+  border-radius: 0px 0px 10px 10px;
+}
+
+#menu-copy-button {
+  margin-left: 10px;
+}
+
+#modal {
+  position: absolute;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  border-radius: 10px;
+  background-color: #1F2227;
+  box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.75);
+}
+
+.modal-title {
+  font-family: Raleway;
+  font-size: 24px;
+  color: white;
+  padding: 40px 70px 0px 70px;
+  user-select: none;
+}
+
+.modal-filename {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#modal-filename-filetype {
+  font-family: Roboto;
+  font-size: 18px;
+  color: white;
+  padding: 7px 7px 7px 5px;
+  user-select: none;
+}
+
+#modal-filename-input {
+  width: 70%;
+  background-color: #1A1D21;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  outline: none;
+  padding: 7px;
+  font-family: Roboto;
+  font-size: 18px;
+  text-align: end;
+}
+
+#modal-filename-input:focus {
+  border: 1px solid #2E71FF;
+}
+
+#modal-filename-input-error {
+  visibility: hidden;
+  top: 100%;
+  left: 0%;
+  padding: 10px 10px 0px 10px;
+  font-family: Roboto;
+  font-size: 16px;
+  color: red;
+  user-select: none;
+}
+
+.modal-buttons-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 70px 40px 70px;
+}
+
+.modal-button {
+  background-color: #2E71FF;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0px 10px 0px 10px;
+}
+
+.modal-button:hover {
+  background-color: #0050FA;
+}
+
+#screenshot {
+  display: block;
+  max-width: 100%;
+}
+
+.cropper-crop {
+  cursor: default;
+}
