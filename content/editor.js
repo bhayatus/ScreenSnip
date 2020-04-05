@@ -33,6 +33,14 @@ function createEventListeners() {
     openModal("image/webp");
   });
 
+  // Dark theme toggle is clicked.
+  document.getElementById("menu-dark-theme-toggle").addEventListener("change", function() {
+    // Set either light or dark theme.
+    toggle = document.getElementById("menu-dark-theme-toggle");
+    theme = (toggle.checked ? "dark" : "light");
+    document.documentElement.setAttribute("data-theme", theme);
+  });
+
   // Filename input field is typed in.
   document.getElementById("modal-filename-input").addEventListener("input", function() {
     input = document.getElementById("modal-filename-input");
@@ -126,7 +134,8 @@ function copyImageToClipboard(dataURI) {
     text: "Successfully copied to clipboard!",
     pos: "bottom-center",
     showAction: false,
-    backgroundColor: "#1F2227",
+    textColor: getComputedStyle(document.documentElement).getPropertyValue("--text-color"),
+    backgroundColor: getComputedStyle(document.documentElement).getPropertyValue("--modal-background-color"),
     duration: 2000
   });
 }
